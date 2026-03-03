@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: hello
+  namespace: monitoring
   labels:
     release: monitoring-stack
 spec:
@@ -10,7 +11,7 @@ spec:
       app: hello
   namespaceSelector:
     matchNames:
-      - {{ .Release.Namespace }}
+      - default
   endpoints:
     - port: metrics
       interval: 15s
