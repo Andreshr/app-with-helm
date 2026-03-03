@@ -6,8 +6,8 @@ data:
   default.conf: |
     server {
       listen 80;
-      cation / {
-        loroot /usr/share/nginx/html;
+      location / {
+        root /usr/share/nginx/html;
         index index.html;
       }
       location /stub_status {
